@@ -16,6 +16,10 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/about_settings">
+	
+	<PreferenceScreen android:key="logo"
+			  android:enabled="false"
+			  android:layout="@layout/logo_row" />
 
         <PreferenceScreen android:key="carbon_about"
             android:title="@string/carbon_about_title"
