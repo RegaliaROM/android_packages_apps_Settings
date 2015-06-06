@@ -17,11 +17,17 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Heads Up Colors -->
-	<PreferenceScreen
+    <PreferenceScreen
         android:key="heads_up_colors"
         android:fragment="com.android.settings.carbon.HeadsUpColors"
         android:title="@string/heads_up_colors_title"
         android:summary="@string/heads_up_colors_summary" />
+
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+        android:key="heads_up_show_status_button"
+        android:title="@string/show_headsup_button_title"
+        android:summary="@string/show_headsup_button_summary"
+        android:defaultValue="false" />
 
     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
         android:key="heads_up_dismiss_on_remove"
@@ -44,6 +50,13 @@
         android:entryValues="@array/heads_up_time_out_values"
         android:persistent="false" />
 
+    <ListPreference
+        android:key="heads_up_snooze_time"
+        android:title="@string/heads_up_snooze_title"
+        android:entries="@array/heads_up_snooze_entries"
+        android:entryValues="@array/heads_up_snooze_values"
+        android:persistent="false" />
+    
     <PreferenceCategory
         android:title="@string/heads_up_dnd_title"
         android:key="dnd_applications_list">

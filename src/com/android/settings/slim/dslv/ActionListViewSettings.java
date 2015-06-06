@@ -150,7 +150,8 @@ public class ActionListViewSettings extends ListFragment implements
             public void remove(int which) {
                 ActionConfig item = mActionConfigsAdapter.getItem(which);
                 mActionConfigsAdapter.remove(item);
-                if (mDisableDeleteLastEntry && mActionConfigs.size() == 0) {
+                if (mDisableDeleteLastEntry && 
+                    (mActionConfigs == null || mActionConfigs.size() == 0)) {
                     mActionConfigsAdapter.add(item);
                     showDialogInner(DLG_DELETION_NOT_ALLOWED, 0, false, false);
                 } else {
@@ -417,6 +418,7 @@ public class ActionListViewSettings extends ListFragment implements
     }
 
     private boolean checkForDuplicateMainNavActions(String action) {
+        if (mActionConfigs == null) return false;
         ActionConfig actionConfig;
         for (int i = 0; i < mActionConfigs.size(); i++) {
             actionConfig = mActionConfigsAdapter.getItem(i);
@@ -456,7 +458,7 @@ public class ActionListViewSettings extends ListFragment implements
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case MENU_ADD:
-                if (mActionConfigs.size() == mMaxAllowedActions) {
+                if (mActionConfigs != null && mActionConfigs.size() == mMaxAllowedActions) {
                     Toast.makeText(mActivity,
                             getResources().getString(R.string.shortcut_action_max),
                             Toast.LENGTH_LONG).show();
@@ -794,7 +796,11 @@ public class ActionListViewSettings extends ListFragment implements
                         List<String> finalValuesList = new ArrayList<String>();
 
                         for (int i = 0; i < getOwner().mActionDialogValues.length; i++) {
-                            if (!getOwner().mActionDialogValues[i]
+                            if (getOwner().mActionDialogEntries[i] != null &&
+                                getOwner().mActionDialogValues[i] != null &&
+                                getOwner().mActionDialogEntries[i] == "" &&
+                                getOwner().mActionDialogValues[i] == "" &&
+                                !getOwner().mActionDialogValues[i]
                                     .equals(ActionConstants.ACTION_NULL)) {
                                 finalEntriesList.add(getOwner().mActionDialogEntries[i]);
                                 finalValuesList.add(getOwner().mActionDialogValues[i]);
