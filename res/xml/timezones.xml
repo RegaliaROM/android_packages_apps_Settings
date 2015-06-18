@@ -1,5 +1,4 @@
 <timezones>
-    <timezone id="Pacific/Majuro"></timezone>
     <timezone id="Pacific/Midway"></timezone>
     <timezone id="Pacific/Honolulu"></timezone>
     <timezone id="America/Anchorage"></timezone>
@@ -31,12 +30,16 @@
     <timezone id="Europe/London"></timezone>
     <timezone id="Europe/Amsterdam"></timezone>
     <timezone id="Europe/Belgrade"></timezone>
+    <timezone id="Europe/Berlin"></timezone>
     <timezone id="Europe/Brussels"></timezone>
+    <timezone id="Europe/Madrid"></timezone>
+    <timezone id="Europe/Rome"></timezone>
     <timezone id="Europe/Sarajevo"></timezone>
     <timezone id="Africa/Windhoek"></timezone>
     <timezone id="Africa/Brazzaville"></timezone>
     <timezone id="Asia/Amman"></timezone>
     <timezone id="Europe/Athens"></timezone>
+    <timezone id="Europe/Istanbul"></timezone>
     <timezone id="Asia/Beirut"></timezone>
     <timezone id="Africa/Cairo"></timezone>
     <timezone id="Europe/Helsinki"></timezone>
@@ -81,6 +84,8 @@
     <timezone id="Asia/Vladivostok"></timezone>
     <timezone id="Pacific/Guam"></timezone>
     <timezone id="Asia/Magadan"></timezone>
+    <timezone id="Pacific/Noumea"></timezone>
+    <timezone id="Pacific/Majuro"></timezone>
     <timezone id="Pacific/Auckland"></timezone>
     <timezone id="Pacific/Fiji"></timezone>
     <timezone id="Pacific/Tongatapu"></timezone>
